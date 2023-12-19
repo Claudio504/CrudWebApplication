@@ -1,0 +1,43 @@
+
+<mat-card>
+    <div>
+      <h1 class="text-light">Detalhes do Projeto</h1>
+    </div>
+  <div *ngIf="projeto">
+    <form>
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>Nome:</mat-label>
+        <input matInput type="text" class="form-control text-dark" value="{{projeto.nome}}" disabled>
+          </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>Situação:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{projeto.ativo == true ? 'Ativo' : 'Inativo'}}" disabled>
+          </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>Data de Criação:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{projeto.dataDeCriacao}}" disabled>
+          </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>Data de Alteração:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{projeto.dataDeAlteracao}}" disabled>
+          </mat-form-field>
+      </div>
+
+      <div class="btn-box">          
+          <a routerLink="" mat-raised-button>Voltar</a>
+          <a (click)="InativaProjeto()" mat-raised-button color="warn">Inativar Projeto</a>
+      </div>
+
+    </form>
+  </div>
+</mat-card>

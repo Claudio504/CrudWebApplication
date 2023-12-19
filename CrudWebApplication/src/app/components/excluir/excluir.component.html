@@ -1,0 +1,10 @@
+<div *ngIf="projeto">
+  <h1 mat-dialog-title>Confirma a exclução?</h1>
+  <div mat-dialog-content class="nome-projeto">
+    <p style="font: bold;">Projeto:</p>
+    <p>{{projeto.nome}}</p>
+  </div>
+  <div mat-dialog-actions class="btn-confirmar">
+    <button mat-button mat-raised-button color="warn" (click)="excluir()">Confirmar</button>
+  </div>
+</div>

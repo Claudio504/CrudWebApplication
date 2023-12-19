@@ -1,0 +1,27 @@
+<mat-card>
+  <h1>{{btnTitulo}}</h1>
+
+  <form  [formGroup]="projetoForm" (ngSubmit)="submit()" #formDir="ngForm">
+    <input type="hidden" value="" formControlName="id">
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Nome:</mat-label>
+        <input matInput id="nome" type="text" class="form-control text-dark" formControlName="nome" placeholder="Nome do projeto" required>
+      </mat-form-field>
+    </div>
+
+    <div  class="input-box">
+      <mat-form-field>
+        <mat-label>Data de Criação:</mat-label>
+          <input matInput id="dataDeCriacao" type="text" class="form-control  text-dark" formControlName="dataDeCriacao" required>
+      </mat-form-field>
+    </div>
+
+    <div  class="btn-box">        
+        <button class="btn btn-primary w-50" routerLink=""  mat-raised-button >Voltar</button>
+        <button type="submit" class="btn btn-success w-50 btn-cadastrar-projeto" [disabled]="!projetoForm.valid" mat-raised-button>{{btnAcao}}</button>
+    </div>
+  </form>
+
+</mat-card>
